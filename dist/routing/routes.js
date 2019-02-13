@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const home_controller_1 = require("../controllers/home.controller");
+const inversify_config_1 = require("../ioc/inversify.config");
 class Routes {
+    constructor() {
+    }
     routes(app) {
-        app.route("/").get((req, res) => {
-            res.status(200).send(new home_controller_1.HomeController().get());
-        });
+        const controller = inversify_config_1.myContainer.get(home_controller_1.HomeController);
+        app.route("/").get(controller.get);
     }
 }
 exports.Routes = Routes;

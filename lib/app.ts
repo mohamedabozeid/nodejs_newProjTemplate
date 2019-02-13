@@ -2,6 +2,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import { Routes } from "./routing/routes";
 
+
 class App {
   public app: express.Application;
   public routing: Routes = new Routes();

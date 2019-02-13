@@ -1,6 +1,6 @@
 import { AppSetting } from "models";
+import * as config from 'config';
 
-var config = require("config");
 
 export class ConfigurationManager {
   constructor() {

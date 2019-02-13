@@ -1,11 +1,12 @@
-import { Request, Response } from "express";
-
 import { HomeController } from "../controllers/home.controller";
+import { myContainer } from "../ioc/inversify.config"
 
 export class Routes {
+  constructor() {
+
+  }
   public routes(app): void {
-    app.route("/").get((req: Request, res: Response) => {
-      res.status(200).send(new HomeController().get());
-    });
+    const controller = myContainer.get<HomeController>(HomeController);
+    app.route("/").get(controller.get);
   }
 }

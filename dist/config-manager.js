@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var config = require("config");
+const config = require("config");
 class ConfigurationManager {
     constructor() {
         this.init();
